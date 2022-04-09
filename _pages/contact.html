@@ -24,6 +24,7 @@ permalink: /ask-me-anything/
     </div>
   </div>
 </section>
+{% if site.data.answers %}
 <section>
 <h3 class="subtitle is-4">Answers</h3>
 {% for answer in site.data.answers %}
@@ -40,4 +41,5 @@ permalink: /ask-me-anything/
 </div>
 {% endfor %}
 </section>
+{% endif %}
 

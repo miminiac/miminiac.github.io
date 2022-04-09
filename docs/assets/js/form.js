@@ -10,7 +10,7 @@ function sendQuestion() {
       name = name == '' ? 'anon' : name;
 
       form[formIDs[0]] = name;
-      form[formIDs[0]] = question;
+      form[formIDs[1]] = question;
       // console.log(form);
 
       setTimeout(function() {
@@ -32,11 +32,9 @@ function sendQuestion() {
               crossDomain: true,
               dataType: "xml",
               data: form,
-              success: function(jqXHR, textStatus, errorThrown) {
-                // console.log('Enter on success');
-              },
-              error: function(jqXHR, textStatus, errorThrown) {
-                // console.log('Enter on error');
+              statusCode: {
+                0:   function() {  console.log("OK") },
+                200: function() {  console.log("error") },
               }
             });
           }

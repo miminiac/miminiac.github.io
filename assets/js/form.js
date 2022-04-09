@@ -10,7 +10,7 @@ function sendQuestion() {
       name = name == '' ? 'anon' : name;
 
       form[formIDs[0]] = name;
-      form[formIDs[0]] = question;
+      form[formIDs[1]] = question;
       // console.log(form);
 
       setTimeout(function() {

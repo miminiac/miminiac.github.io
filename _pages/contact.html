@@ -1,0 +1,45 @@
+---
+layout: page
+title: Q&A
+permalink: /ask-me-anything/
+---
+
+<section>
+<p>Ask me anything!</p>
+</section>
+<section>
+  <div class="field">
+    <div class="control">
+      <input class="input" id="name" type="text" placeholder="Name (Optional)">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <textarea id="question" class="textarea" placeholder="Ask your question here!"></textarea>
+    </div>
+  </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <button onclick="sendQuestion();" class="button is-link">Ask!</button>
+    </div>
+  </div>
+</section>
+{% if site.data.answers %}
+<section>
+<h3 class="subtitle is-4">Answers</h3>
+{% for answer in site.data.answers %}
+<div class="card">
+  <div class="card-content">
+    <p class="subtitle">
+      {{ answer.question }} {% if answer.asker != 'anon' %}<small> - {{answer.asker}}</small>{% endif %}
+    </p>
+    <hr/>
+    <p class="content">
+      {{ answer.answer }}
+    </p>
+  </div>
+</div>
+{% endfor %}
+</section>
+{% endif %}
+

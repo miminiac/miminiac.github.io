@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<section>
+{{ content }}
+</section>
+<section>
+<h2 class="title is-3">Haikyuu Fanworks</h2>
+  <div class="fic-container">
+  {% for fic in site.data.fics %}
+    <div class="column is-one-third">
+      <div class="card">
+        <div class="card-content">
+          <p class="title">
+            {% if fic.rating contains 'M' or fic.rating contains 'E' %}
+              <span class="tag is-danger">rated: {{fic.rating | downcase}}</span>
+            {% endif %}
+            {% if fic.series %}
+              <span class="tag is-light">series</span>
+            {% endif %}
+            {% if fic.status == 'ongoing' %}
+              <span class="tag is-light">{{fic.status}}</span>
+            {% endif %}
+            {% if fic.main_ship %}
+              <span class="tag is-white">{{fic.main_ship}}</span>
+            {% endif %}
+            <span class="break">{{ fic.title }}</span>
+          </p>
+          <hr/>
+          <p class="subtitle">
+            {{ fic.description }}
+          </p>
+          {% if fic.co_authors %}
+          <p class="note is-primary">In collaboration with {{ fic.co_authors }}</p>
+          {% endif %}
+          <p class="content">
+            {% for ship in fic.ships %}
+              <span class="tag is-primary">{{ship}}</span>
+            {% endfor %}
+            {% for tag in fic.tags %}
+              <span class="tag is-warning">{{tag}}</span>
+            {% endfor %}
+          </p>
+        </div>
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <span>
+              <a target="_blank" href="{{fic.url}}">Read Now</a>
+            </span>
+          </p>
+        </footer>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</section>

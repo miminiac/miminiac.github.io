@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <div class="container">
+      {% include nav.html %}
+    </div>
+    {% if page.layout == "home" %}
+    {% include header.html %}
+    {% endif %}
+    <main class="container">
+      <article class="section">{{ content }}</article>
+    </main>
+    {% include footer.html %}
+  </body>
+  {% if page.title == "Q&A" %}
+  <script src="/assets/js/form.js"></script>
+  {% endif %}
+  <script src="/assets/js/main.js"></script>
+</html>

@@ -1,0 +1,171 @@
+$primary: #E58F65;
+$link: #D05353;
+$warning: #F9E784;
+$text: #191919;
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Libre Baskerville", Times, serif;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+header {
+  margin-top: -60px;
+  height: calc(100vh - 108px);
+  width: 100vw;
+  background: #F9E784;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+header .banner {
+  display: inline-flex;
+}
+
+.image.is-50vh {
+  width: 50vh;
+}
+
+.break {
+  display: block;
+}
+
+.card {
+  margin: .375rem 0;
+}
+
+.tag {
+  margin: .165rem 0;
+}
+
+.note {
+  margin-bottom: .75rem;
+}
+
+p.is-primary {
+  color: #4a4a4a;
+  font-style: italic;
+}
+
+.css-typing {
+  margin-left: 3vw;
+}
+
+.css-typing * {
+  font-family: 'Reenie Beanie';
+  text-align: left;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid transparent; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+}
+
+header .title {
+  font-size: 6rem;
+}
+
+header .subtitle {
+  font-size: 4rem;
+}
+
+.footer {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  padding: .5rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 1rem;
+  &:hover {
+    filter: grayscale(1);
+  }
+}
+
+.icon.is-wider {
+  width: 3rem;
+  .social-icon {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.social-icon#tumblr {
+  margin-left: -1.2rem;
+}
+
+.social-icon {
+  width: 100%;
+  height: 100%;
+  filter: invert(30%) sepia(73%) saturate(741%) hue-rotate(317deg) brightness(117%) contrast(82%);
+}
+
+@media screen and (min-width: 1216px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .fic-container .is-one-third {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .css-typing {
+    padding-top: 10%;
+  }
+  .banner {
+    margin-left: 11vw;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  header {
+    text-align: center;
+  }
+  .banner {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    > * {
+      margin: .75rem 0;
+    }
+  }
+  .css-typing * {
+    white-space: pre-wrap;
+  }
+
+  .image.is-50vh {
+    width: 36vh;
+  }
+
+  header .title {
+    white-space: 3rem !important;
+  }
+  header .subtitle {
+    white-space: 1.7rem !important;
+  }
+}
